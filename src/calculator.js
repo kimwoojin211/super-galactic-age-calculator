@@ -1,7 +1,7 @@
 export default class Calculator {
   constructor() { }
 
-  realAge(earthAge, location) { // assumes all ages are integers that round down after conversion
+  planetAge(earthAge, location) { // assumes all ages are integers that round down after conversion
     switch (location) {
       case ("Mercury"):
         return Math.floor(earthAge / .24);
@@ -16,21 +16,22 @@ export default class Calculator {
     }
   }
 
-  lifeExpectancy(realAge, location) {
+  lifeExpectancy(earthAge, location){
     const averageExpectancy = 70;
-    const ageDifference = averageExpectancy - realAge;
-    switch (location) {
-      case ("Mercury"):
-        return ageDifference > 0 ? Math.floor(ageDifference / 0.24) : Math.ceil(ageDifference / 0.24);
-      case ("Venus"):
-        return ageDifference > 0 ? Math.floor(ageDifference / 0.62) : Math.ceil(ageDifference / 0.62);
-      case ("Mars"):
-        return ageDifference > 0 ? Math.floor(ageDifference / 1.88) : Math.ceil(ageDifference / 1.88);
-      case ("Jupiter"):
-        return ageDifference > 0 ? Math.floor(ageDifference / 11.86) : Math.ceil(ageDifference / 11.86);
-      default:
-        break;
-    }
+    const convertedExpectancy = this.planetAge(averageExpectancy - earthAge, location);
+    return (convertedExpectancy > 0 || Number.isInteger(convertedExpectancy)) ? convertedExpectancy : convertedExpectancy + 1;
+    // switch (location) {
+    //   case ("Mercury"):
+    //     return ageDifference > 0 ? Math.floor(ageDifference / 0.24) : Math.ceil(ageDifference / 0.24);
+    //   case ("Venus"):
+    //     return ageDifference > 0 ? Math.floor(ageDifference / 0.62) : Math.ceil(ageDifference / 0.62);
+    //   case ("Mars"):
+    //     return ageDifference > 0 ? Math.floor(ageDifference / 1.88) : Math.ceil(ageDifference / 1.88);
+    //   case ("Jupiter"):
+    //     return ageDifference > 0 ? Math.floor(ageDifference / 11.86) : Math.ceil(ageDifference / 11.86);
+    //   default:
+    //     break;
+    // }
   }
 
 }

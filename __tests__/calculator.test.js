@@ -10,18 +10,18 @@ describe('Calculator', () => {
   test("It will create a new Super Galactic Age Calculator object", () => {
     expect(calculator).toEqual({});
   });
-  // tests realAge function
+  // tests planetAge function
   // 1 mercury age = .24 earth age
   // 1 venus age = .62 earth age
   // 1 mars age = 1.88 earth age
   test("It will calculate a person's age based on the user's choice of a planet's solar year", () => {
-    expect(calculator.realAge(26, "Mercury")).toEqual(108);
-    expect(calculator.realAge(26, "Venus")).toEqual(41);
-    expect(calculator.realAge(26, "Mars")).toEqual(13);
-    expect(calculator.realAge(26, "Jupiter")).toEqual(2);
+    expect(calculator.planetAge(26, "Mercury")).toEqual(108);
+    expect(calculator.planetAge(26, "Venus")).toEqual(41);
+    expect(calculator.planetAge(26, "Mars")).toEqual(13);
+    expect(calculator.planetAge(26, "Jupiter")).toEqual(2);
   });
   // tests lifeExpectancy function
-  // assumes average life expentency is 70 earth years for everyone.
+  // assumes average life expectancy is 70 earth years for everyone.
   // returns value in terms of planet's years
   //  positive number indicates how many years left,
   //  negative number indicates how many years user's survived past life expectancy
