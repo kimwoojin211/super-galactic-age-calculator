@@ -33,8 +33,6 @@ describe('Calculator', () => {
   // negative number indicates how many years user's survived past life expectancy
   test("It will determine how many more years one is expected to live on Mercury if their age is under the average life expectancy", () => {
     expect(calculator.lifeExpectancy(26, "Mercury")).toEqual(183);
-  });
-  test("It will determine how many more years one is expected to live on Mercury if their age is under the average life expectancy", () => {
     expect(calculator.lifeExpectancy(100, "Mercury")).toEqual(-125);
   });
 });
