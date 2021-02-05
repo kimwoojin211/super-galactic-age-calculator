@@ -17,4 +17,8 @@ describe('Calculator', () => {
   test("It will calculate a person's age on Venus", () => {
     expect(calculator.realAge(26, "Venus")).toEqual(41);
   });
+  // 1 mars age = 1.88 earth age
+  test("It will calculate a person's age on Mars", () => {
+    expect(calculator.realAge(26, "Mars")).toEqual(13);
+  });
 });
