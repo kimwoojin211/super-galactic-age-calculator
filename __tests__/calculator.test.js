@@ -1,3 +1,9 @@
+//woojin notes:
+//wait. have i been thinking of this wrong.
+//for realAge(age), age is given in earth years, and you want to return the planetary age.
+//lifeexpectancy, i also want it to return the planetary age.
+//god damn it. i had the life expectancy formula right the first time. 
+
 import Calculator from './../src/calculator.js';
 // assumes for all functions that all ages are integers that round down after conversion
 describe('Calculator', () => {
@@ -32,11 +38,12 @@ describe('Calculator', () => {
   //  positive number indicates how many years left,
   //  negative number indicates how many years user's survived past life expectancy
   test("It will determine how many more years one is expected to live on Mercury (or how many years past the average life expectancy one has lived", () => {
-    expect(calculator.lifeExpectancy(26, "Mercury")).toEqual(10);
-    expect(calculator.lifeExpectancy(100, "Mercury")).toEqual(-7);
+    expect(calculator.lifeExpectancy(26, "Mercury")).toEqual(183);
+    expect(calculator.lifeExpectancy(100, "Mercury")).toEqual(-125);
   });
   test("It will determine how many more years one is expected to live on Venus (or how many years past the average life expectancy one has lived", () => {
-    expect(calculator.lifeExpectancy(26, "Venus")).toEqual(27);
-    expect(calculator.lifeExpectancy(100, "Venus")).toEqual(-18);
+    expect(calculator.lifeExpectancy(26, "Venus")).toEqual(70);
+    expect(calculator.lifeExpectancy(100, "Venus")).toEqual(-48);
   }); 
+
 });

@@ -21,9 +21,9 @@ export default class Calculator{
     const ageDifference = averageExpectancy - realAge;
     switch (location) {
       case ("Mercury"):
-        return ageDifference > 0 ? Math.floor(ageDifference*0.24) : Math.ceil(ageDifference*0.24);
+        return ageDifference > 0 ? Math.floor(ageDifference/0.24) : Math.ceil(ageDifference/0.24);
       case ("Venus"):
-        return ageDifference > 0 ? Math.floor(ageDifference * 0.62) : Math.ceil(ageDifference * 0.62);
+        return ageDifference > 0 ? Math.floor(ageDifference/0.62) : Math.ceil(ageDifference/0.62);
       default:
         break;
     }
