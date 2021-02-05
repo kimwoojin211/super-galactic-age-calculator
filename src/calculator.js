@@ -22,6 +22,8 @@ export default class Calculator{
     switch (location) {
       case ("Mercury"):
         return ageDifference > 0 ? Math.floor(ageDifference*0.24) : Math.ceil(ageDifference*0.24);
+      case ("Venus"):
+        return ageDifference > 0 ? Math.floor(ageDifference * 0.62) : Math.ceil(ageDifference * 0.62);
       default:
         break;
     }
