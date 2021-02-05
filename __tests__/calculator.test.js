@@ -42,8 +42,8 @@ describe('Calculator', () => {
     expect(calculator.lifeExpectancy(100, "Venus")).toEqual(-48);
   }); 
   test("It will determine how many more years one is expected to live on Mars (or how many years past the average life expectancy one has lived", () => {
-    expect(calculator.lifeExpectancy(26, "Mars")).toEqual(82);
-    expect(calculator.lifeExpectancy(100, "Mars")).toEqual(-18);
+    expect(calculator.lifeExpectancy(26, "Mars")).toEqual(23);
+    expect(calculator.lifeExpectancy(100, "Mars")).toEqual(-15);
   }); 
   
 });

@@ -1,9 +1,9 @@
-export default class Calculator{
-  constructor(){}
+export default class Calculator {
+  constructor() { }
 
   realAge(earthAge, location) { // assumes all ages are integers that round down after conversion
-    switch(location){
-      case("Mercury"):
+    switch (location) {
+      case ("Mercury"):
         return Math.floor(earthAge / .24);
       case ("Venus"):
         return Math.floor(earthAge / .62);
@@ -16,14 +16,16 @@ export default class Calculator{
     }
   }
 
-  lifeExpectancy(realAge,location){
+  lifeExpectancy(realAge, location) {
     const averageExpectancy = 70;
     const ageDifference = averageExpectancy - realAge;
     switch (location) {
       case ("Mercury"):
-        return ageDifference > 0 ? Math.floor(ageDifference/0.24) : Math.ceil(ageDifference/0.24);
+        return ageDifference > 0 ? Math.floor(ageDifference / 0.24) : Math.ceil(ageDifference / 0.24);
       case ("Venus"):
-        return ageDifference > 0 ? Math.floor(ageDifference/0.62) : Math.ceil(ageDifference/0.62);
+        return ageDifference > 0 ? Math.floor(ageDifference / 0.62) : Math.ceil(ageDifference / 0.62);
+      case ("Mars"):
+        return ageDifference > 0 ? Math.floor(ageDifference / 1.88) : Math.ceil(ageDifference / 1.88);
       default:
         break;
     }
