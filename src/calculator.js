@@ -24,7 +24,9 @@ export default class Calculator {
   }
   
   planetAge(earthAge, location) {
+    return Math.floor(this.timeConverter(earthAge, location));
   }
+  
 
   lifeExpectancy(earthAge, location){
     // const averageExpectancy = 70;

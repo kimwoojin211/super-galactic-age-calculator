@@ -16,10 +16,10 @@ describe('Calculator', () => {
   // 1 jupiter age = 11.86 earth ages
 
   test("It will convert the input number from earth time to another planet's time", () => {
-    expect(calculator.timeConverter(26, "Mercury")).toEqual(26/.24);
-    expect(calculator.timeConverter(26, "Venus")).toEqual(26/.62);
-    expect(calculator.timeConverter(26, "Mars")).toEqual(26/1.88);
-    expect(calculator.timeConverter(26, "Jupiter")).toEqual(26/11.86);
+    expect(calculator.timeConverter(26, "Mercury")).toEqual(108.33333333333334);
+    expect(calculator.timeConverter(26, "Venus")).toEqual(41.935483870967744);
+    expect(calculator.timeConverter(26, "Mars")).toEqual(13.8297872340425532);
+    expect(calculator.timeConverter(26, "Jupiter")).toEqual(2.192242833052276559865);
   });
   // tests planetAge function
   // assumes that a person's inputted age is always a positive integer
