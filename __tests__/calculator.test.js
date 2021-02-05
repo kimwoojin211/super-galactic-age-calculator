@@ -1,4 +1,7 @@
-//woojin notes: see calculator.js notes
+/*woojin notes: i guess having formulas as the expected value is technically cheating. having to write out the decimals and figure out how many decimal places you need is a pain though.
+
+is it considered cheating? idk.
+*/
 
 import Calculator from './../src/calculator.js';
 describe('Calculator', () => {
