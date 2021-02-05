@@ -12,20 +12,12 @@ describe('Calculator', () => {
   });
   // tests realAge function
   // 1 mercury age = .24 earth age
-  test("It will calculate a person's age on Mercury", () => {
-    expect(calculator.realAge(26,"Mercury")).toEqual(108);
-  });
-    // 1 venus age = .62 earth age
-  test("It will calculate a person's age on Venus", () => {
-    expect(calculator.realAge(26, "Venus")).toEqual(41);
-  });
+  // 1 venus age = .62 earth age
   // 1 mars age = 1.88 earth age
-  test("It will calculate a person's age on Mars", () => {
+  test("It will calculate a person's age based on the user's choice of a planet's solar year", () => {
+    expect(calculator.realAge(26, "Mercury")).toEqual(108);
+    expect(calculator.realAge(26, "Venus")).toEqual(41);
     expect(calculator.realAge(26, "Mars")).toEqual(13);
-  });
-
-  // 1 jupiter age = 11.86 earth age
-  test("It will calculate a person's age on Jupiter", () => {
     expect(calculator.realAge(26, "Jupiter")).toEqual(2);
   });
   // tests lifeExpectancy function
@@ -33,17 +25,15 @@ describe('Calculator', () => {
   // returns value in terms of planet's years
   //  positive number indicates how many years left,
   //  negative number indicates how many years user's survived past life expectancy
-  test("It will determine how many more years one is expected to live on Mercury (or how many years past the average life expectancy one has lived", () => {
+  test("It will determine how many more years a person is expected to live (or how many years a person has lived past the average life expectancy) on a planet of the user's choosing", () => {
     expect(calculator.lifeExpectancy(26, "Mercury")).toEqual(183);
     expect(calculator.lifeExpectancy(100, "Mercury")).toEqual(-125);
-  });
-  test("It will determine how many more years one is expected to live on Venus (or how many years past the average life expectancy one has lived", () => {
     expect(calculator.lifeExpectancy(26, "Venus")).toEqual(70);
     expect(calculator.lifeExpectancy(100, "Venus")).toEqual(-48);
-  }); 
-  test("It will determine how many more years one is expected to live on Mars (or how many years past the average life expectancy one has lived", () => {
     expect(calculator.lifeExpectancy(26, "Mars")).toEqual(23);
     expect(calculator.lifeExpectancy(100, "Mars")).toEqual(-15);
+    expect(calculator.lifeExpectancy(26, "Jupiter")).toEqual(3);
+    expect(calculator.lifeExpectancy(100, "Jupiter")).toEqual(-2);
   }); 
   
 });

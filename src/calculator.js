@@ -26,6 +26,8 @@ export default class Calculator {
         return ageDifference > 0 ? Math.floor(ageDifference / 0.62) : Math.ceil(ageDifference / 0.62);
       case ("Mars"):
         return ageDifference > 0 ? Math.floor(ageDifference / 1.88) : Math.ceil(ageDifference / 1.88);
+      case ("Jupiter"):
+        return ageDifference > 0 ? Math.floor(ageDifference / 11.86) : Math.ceil(ageDifference / 11.86);
       default:
         break;
     }
