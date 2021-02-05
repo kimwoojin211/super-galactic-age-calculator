@@ -1,6 +1,13 @@
-/*woojin notes: i guess having formulas as the expected value is technically cheating. having to write out the decimals and figure out how many decimal places you need is a pain though.
+/*woojin notes:
+.................................
+i just read the sentence that says
+"we'll only want ONE expectation per test."
+a;woijga;owirgja;owirgja;eoigha;oeirhoa;ierhghae
+why.
 
-is it considered cheating? idk.
+also, i realized that if I make location input through buttons, I don't need to worry about capitalization.
+
+sigh.
 */
 
 import Calculator from './../src/calculator.js';
@@ -18,42 +25,62 @@ describe('Calculator', () => {
   // 1 venus age = .62 earth age
   // 1 mars age = 1.88 earth age
   // 1 jupiter age = 11.86 earth ages
-  test("It will convert the input number from earth time to another planet's time (input planet can be non-case sensitive)", () => {
+  test("It will convert the input number from earth years to Mercury years.", () => {
     expect(calculator.timeConverter(26, "Mercury")).toEqual(108.33333333333334);
-    expect(calculator.timeConverter(26, "mercury")).toEqual(108.33333333333334);
-    expect(calculator.timeConverter(26, "mERcUrY")).toEqual(108.33333333333334);
-    expect(calculator.timeConverter(26, "Venus")).toEqual(41.935483870967744);
-    expect(calculator.timeConverter(26, "vENUS")).toEqual(41.935483870967744);
-    expect(calculator.timeConverter(26, "venUS")).toEqual(41.935483870967744);
-    expect(calculator.timeConverter(26, "Mars")).toEqual(13.8297872340425532);
-    expect(calculator.timeConverter(26, "MARS")).toEqual(13.8297872340425532);
-    expect(calculator.timeConverter(26, "mars")).toEqual(13.8297872340425532);
-    expect(calculator.timeConverter(26, "Jupiter")).toEqual(2.192242833052276559865);
-    expect(calculator.timeConverter(26, "jUpiteR")).toEqual(2.192242833052276559865);
-    expect(calculator.timeConverter(26, "juPItEr")).toEqual(2.192242833052276559865);
   });
+  test("It will convert the input number from earth years to Venus years.", () => {
+    expect(calculator.timeConverter(26, "Venus")).toEqual(41.935483870967744);
+  });
+  test("It will convert the input number from earth years to Mars years.", () => {
+    expect(calculator.timeConverter(26, "Mars")).toEqual(13.8297872340425532);
+  });
+  test("It will convert the input number from earth years to Jupiter years.", () => {
+    expect(calculator.timeConverter(26, "Jupiter")).toEqual(2.192242833052276559865);
+  });
+
   // tests planetAge function
   // assumes that a person's inputted age is always a positive integer
-  test("It will calculate a person's age based on the user's choice of a planet's solar year", () => {
+  test("It will calculate a person's age in years from earth years to Mercury years.", () => {
     expect(calculator.planetAge(26, "Mercury")).toEqual(108);
+  });
+    test("It will calculate a person's age in years from earth years to Venus years.", () => {
     expect(calculator.planetAge(26, "Venus")).toEqual(41);
+  });
+  test("It will calculate a person's age in years from earth years to Mars years.", () => {
     expect(calculator.planetAge(26, "Mars")).toEqual(13);
+  });
+  test("It will calculate a person's age in years from earth years to Jupiter years.", () => {
     expect(calculator.planetAge(26, "Jupiter")).toEqual(2);
   });
   // tests lifeExpectancy function
   // assumes average life expectancy is 70 earth years for everyone.
+  // problem clearly states that it should "determine/return the number of years", so it will return a number, not a string
   // returns value in terms of planet's years
   //  positive number indicates how many years left,
   //  negative number indicates how many years user's survived past life expectancy
-  test("It will determine how many more years a person is expected to live (or how many years a person has lived past the average life expectancy) on a planet of the user's choosing", () => {
+  test("Given an age less than the average expectancy, it will return how many more years a person is expected to live on Mercury", () => {
     expect(calculator.lifeExpectancy(26, "Mercury")).toEqual(183);
+  });
+  test("Given an age higher than the average expectancy, it will return how many years a person has lived beyond the average life expectancy on Mercury (returns a negative value)", () => {
     expect(calculator.lifeExpectancy(100, "Mercury")).toEqual(-125);
+  });
+  test("Given an age less than the average expectancy, it will return how many more years a person is expected to live on Venus", () => {
     expect(calculator.lifeExpectancy(26, "Venus")).toEqual(70);
+  });
+  test("Given an age higher than the average expectancy, it will return how many years a person has lived beyond the average life expectancy on Venus (returns a negative value)", () => {
     expect(calculator.lifeExpectancy(100, "Venus")).toEqual(-48);
+  });
+  test("Given an age less than the average expectancy, it will return how many more years a person is expected to live on Mars", () => {
     expect(calculator.lifeExpectancy(26, "Mars")).toEqual(23);
+  });
+  test("Given an age higher than the average expectancy, it will return how many years a person has lived beyond the average life expectancy on Mars (returns a negative value)", () => {
     expect(calculator.lifeExpectancy(100, "Mars")).toEqual(-15);
+  });
+  test("Given an age less than the average expectancy, it will return how many more years a person is expected to live on Jupiter", () => {
     expect(calculator.lifeExpectancy(26, "Jupiter")).toEqual(3);
+  });
+  test("Given an age higher than the average expectancy, it will return how many years a person has lived beyond the average life expectancy on Jupiter (returns a negative value)", () => {
     expect(calculator.lifeExpectancy(100, "Jupiter")).toEqual(-2);
-  }); 
-  
+  });
+
 });
