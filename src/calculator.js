@@ -3,7 +3,11 @@ export default class Calculator{
 
   realAge(earthAge,location)
   {
-    
+    switch(location){
+      case("Mercury"):
+        return Math.floor(earthAge / .24);
+      default:
+        break;
+    }
   }
-
 }
