@@ -17,7 +17,14 @@ export default class Calculator{
   }
 
   lifeExpectancy(realAge,location){
-
+    const averageExpectancy = 70;
+    const ageDifference = averageExpectancy - realAge;
+    switch (location) {
+      case ("Mercury"):
+        return Math.floor(ageDifference / .24);
+      default:
+        break;
+    }
   }
 
 }

@@ -28,8 +28,8 @@ describe('Calculator', () => {
   });
   // tests lifeExpectancy function
   // assumes average life expentency is 70 earth years for everyone.
-  // returns value in terms of planet's years or earth years?
-  test("It will calculate a person's age on Mercury", () => {
+  // returns value in terms of planet's years
+  test("It will determine how many more years one is expected to live on Mercury if their age is under the average life expectancy", () => {
     expect(calculator.lifeExpectancy(26, "Mercury")).toEqual(183);
   });
 });
