@@ -21,4 +21,9 @@ describe('Calculator', () => {
   test("It will calculate a person's age on Mars", () => {
     expect(calculator.realAge(26, "Mars")).toEqual(13);
   });
+
+  // 1 jupiter age = 11.86 earth age
+  test("It will calculate a person's age on Jupiter", () => {
+    expect(calculator.realAge(26, "Jupiter")).toEqual(2);
+  });
 });
