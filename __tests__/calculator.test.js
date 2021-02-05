@@ -1,5 +1,5 @@
 import Calculator from './../src/calculator.js';
-
+// assumes for all functions that all ages are integers that round down after conversion
 describe('Calculator', () => {
   let calculator;
   beforeEach(() => {
@@ -8,7 +8,7 @@ describe('Calculator', () => {
   test("It will create a new Super Galactic Age Calculator object", () => {
     expect(calculator).toEqual({});
   });
-  // assumes all ages are integers that round down after conversion
+  // tests realAge function
   // 1 mercury age = .24 earth age
   test("It will calculate a person's age on Mercury", () => {
     expect(calculator.realAge(26,"Mercury")).toEqual(108);
@@ -25,5 +25,11 @@ describe('Calculator', () => {
   // 1 jupiter age = 11.86 earth age
   test("It will calculate a person's age on Jupiter", () => {
     expect(calculator.realAge(26, "Jupiter")).toEqual(2);
+  });
+  // tests lifeExpectancy function
+  // assumes average life expentency is 70 earth years for everyone.
+  // returns value in terms of planet's years or earth years?
+  test("It will calculate a person's age on Mercury", () => {
+    expect(calculator.lifeExpectancy(26, "Mercury")).toEqual(183);
   });
 });
