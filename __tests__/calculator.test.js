@@ -35,5 +35,8 @@ describe('Calculator', () => {
     expect(calculator.lifeExpectancy(26, "Mercury")).toEqual(10);
     expect(calculator.lifeExpectancy(100, "Mercury")).toEqual(-7);
   });
-
+  test("It will determine how many more years one is expected to live on Venus (or how many years past the average life expectancy one has lived", () => {
+    expect(calculator.lifeExpectancy(26, "Venus")).toEqual(27);
+    expect(calculator.lifeExpectancy(100, "Venus")).toEqual(-18);
+  }); 
 });
