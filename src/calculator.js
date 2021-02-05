@@ -9,21 +9,21 @@ export default class Calculator {
   constructor() { }
 
   timeConverter(number,location){
+    switch (location) {
+      case ("Mercury"):
+        return number / .24;
+      case ("Venus"):
+        return number / .62;
+      case ("Mars"):
+        return number / 1.88;
+      case ("Jupiter"):
+        return number / 11.86;
+      default:
+        break;
+      }
   }
   
   planetAge(earthAge, location) {
-    // switch (location) {
-    //   case ("Mercury"):
-    //     return Math.floor(earthAge / .24);
-    //   case ("Venus"):
-    //     return Math.floor(earthAge / .62);
-    //   case ("Mars"):
-    //     return Math.floor(earthAge / 1.88);
-    //   case ("Jupiter"):
-    //     return Math.floor(earthAge / 11.86);
-    //   default:
-    //     break;
-    //   }
   }
 
   lifeExpectancy(earthAge, location){
