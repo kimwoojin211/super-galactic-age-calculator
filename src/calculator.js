@@ -8,6 +8,8 @@ export default class Calculator{
         return Math.floor(earthAge / .24);
       case ("Venus"):
         return Math.floor(earthAge / .62);
+      case ("Mars"):
+        return Math.floor(earthAge / 1.88);
       default:
         break;
     }
