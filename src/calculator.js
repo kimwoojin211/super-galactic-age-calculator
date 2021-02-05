@@ -1,25 +1,35 @@
+/*woojin notes: 
+current problem: want to incorporate planetAge into lifeExpectancy so I don't have to repeat similar switch cases.
+I also want to assume that for planetAge, the input earthAge will always be a positive integer, since it doesn't make sense for someone to search look up their own age being negative.
+However, the way I have it coded right now, the Math.floor is always being run in the planetAge stage, so it's always rounding down before the calculation within lifeExpectancy, making it inconsistent between an integer and decimal result
+
+solution: i might just make a separate function to calculate the raw decimal conversion, then plug that function into planetAge using Math.floor to get the integer conversion, and also plug the same function into lifeExpectancy to make use of the raw decimal value.
+*/
 export default class Calculator {
   constructor() { }
 
-  planetAge(earthAge, location) { // assumes all ages are integers that round down after conversion
-    switch (location) {
-      case ("Mercury"):
-        return Math.floor(earthAge / .24);
-      case ("Venus"):
-        return Math.floor(earthAge / .62);
-      case ("Mars"):
-        return Math.floor(earthAge / 1.88);
-      case ("Jupiter"):
-        return Math.floor(earthAge / 11.86);
-      default:
-        break;
-    }
+  timeConverter(number,location){
+  }
+  
+  planetAge(earthAge, location) {
+    // switch (location) {
+    //   case ("Mercury"):
+    //     return Math.floor(earthAge / .24);
+    //   case ("Venus"):
+    //     return Math.floor(earthAge / .62);
+    //   case ("Mars"):
+    //     return Math.floor(earthAge / 1.88);
+    //   case ("Jupiter"):
+    //     return Math.floor(earthAge / 11.86);
+    //   default:
+    //     break;
+    //   }
   }
 
   lifeExpectancy(earthAge, location){
-    const averageExpectancy = 70;
-    const convertedExpectancy = this.planetAge(averageExpectancy - earthAge, location);
-    return (convertedExpectancy > 0 || Number.isInteger(convertedExpectancy)) ? convertedExpectancy : convertedExpectancy + 1;
+    // const averageExpectancy = 70;
+    // const convertedExpectancy = this.planetAge(averageExpectancy - earthAge, location);
+    // return (convertedExpectancy > 0 || Number.isInteger(convertedExpectancy)) ? convertedExpectancy : convertedExpectancy + 1;
     // switch (location) {
     //   case ("Mercury"):
     //     return ageDifference > 0 ? Math.floor(ageDifference / 0.24) : Math.ceil(ageDifference / 0.24);

@@ -1,7 +1,6 @@
-//woojin notes: 
+//woojin notes: see calculator.js notes
 
 import Calculator from './../src/calculator.js';
-// assumes for all functions that all ages are integers that round down after conversion
 describe('Calculator', () => {
   let calculator;
   beforeEach(() => {
@@ -10,10 +9,20 @@ describe('Calculator', () => {
   test("It will create a new Super Galactic Age Calculator object", () => {
     expect(calculator).toEqual({});
   });
-  // tests planetAge function
+  // tests planetConversion function
   // 1 mercury age = .24 earth age
   // 1 venus age = .62 earth age
   // 1 mars age = 1.88 earth age
+  // 1 jupiter age = 11.86 earth ages
+
+  test("It will convert the input number from earth time to another planet's time", () => {
+    expect(calculator.planetAge(26, "Mercury")).toEqual(26/.24);
+    expect(calculator.planetAge(26, "Venus")).toEqual(26/.62);
+    expect(calculator.planetAge(26, "Mars")).toEqual(26/1.88);
+    expect(calculator.planetAge(26, "Jupiter")).toEqual(26/11.86);
+  });
+  // tests planetAge function
+  // assumes that a person's inputted age is always a positive integer
   test("It will calculate a person's age based on the user's choice of a planet's solar year", () => {
     expect(calculator.planetAge(26, "Mercury")).toEqual(108);
     expect(calculator.planetAge(26, "Venus")).toEqual(41);
