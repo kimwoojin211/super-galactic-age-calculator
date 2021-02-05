@@ -23,7 +23,8 @@ describe('Calculator', () => {
     expect(calculator.timeConverter(26, "mercury")).toEqual(108.33333333333334);
     expect(calculator.timeConverter(26, "mERcUrY")).toEqual(108.33333333333334);
     expect(calculator.timeConverter(26, "Venus")).toEqual(41.935483870967744);
-    expect(calculator.timeConverter(26, "venu")).toEqual(41.935483870967744);
+    expect(calculator.timeConverter(26, "vENUS")).toEqual(41.935483870967744);
+    expect(calculator.timeConverter(26, "venUS")).toEqual(41.935483870967744);
     expect(calculator.timeConverter(26, "Mars")).toEqual(13.8297872340425532);
     expect(calculator.timeConverter(26, "MARS")).toEqual(13.8297872340425532);
     expect(calculator.timeConverter(26, "mars")).toEqual(13.8297872340425532);

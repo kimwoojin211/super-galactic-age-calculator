@@ -9,14 +9,14 @@ export default class Calculator {
   constructor() { }
 
   timeConverter(earthTime,location){
-    switch (location) {
-      case ("Mercury"):
+    switch (location.toLowerCase()) {
+      case ("mercury"):
         return earthTime / .24;
-      case ("Venus"):
+      case ("venus"):
         return earthTime / .62;
-      case ("Mars"):
+      case ("mars"):
         return earthTime / 1.88;
-      case ("Jupiter"):
+      case ("jupiter"):
         return earthTime / 11.86;
       default:
         break;
