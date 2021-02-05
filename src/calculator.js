@@ -1,5 +1,9 @@
 export default class Calculator{
-  constructor(){
+  constructor(){}
+
+  realAge(earthAge,location)
+  {
     
   }
+
 }
