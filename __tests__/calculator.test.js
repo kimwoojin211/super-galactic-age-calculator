@@ -29,10 +29,11 @@ describe('Calculator', () => {
   // tests lifeExpectancy function
   // assumes average life expentency is 70 earth years for everyone.
   // returns value in terms of planet's years
-  // positive number indicates how many years left,
-  // negative number indicates how many years user's survived past life expectancy
-  test("It will determine how many more years one is expected to live on Mercury if their age is under the average life expectancy", () => {
-    expect(calculator.lifeExpectancy(26, "Mercury")).toEqual(183);
-    expect(calculator.lifeExpectancy(100, "Mercury")).toEqual(-125);
+  //  positive number indicates how many years left,
+  //  negative number indicates how many years user's survived past life expectancy
+  test("It will determine how many more years one is expected to live on Mercury (or how many years past the average life expectancy one has lived", () => {
+    expect(calculator.lifeExpectancy(26, "Mercury")).toEqual(10);
+    expect(calculator.lifeExpectancy(100, "Mercury")).toEqual(-7);
   });
+
 });
