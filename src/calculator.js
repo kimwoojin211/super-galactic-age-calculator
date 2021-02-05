@@ -2,6 +2,8 @@
   hm. i still need a template literal somewhere. i think i can just use one when making a UI though.
 
   wait. i do want to check for capitalization for the location inputs. can i just use one there?
+
+  meh. i'd rather just use string.tolowercase and use the template literal for a html input
 */
 export default class Calculator {
   constructor() { }

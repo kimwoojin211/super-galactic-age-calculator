@@ -12,17 +12,24 @@ describe('Calculator', () => {
   test("It will create a new Super Galactic Age Calculator object", () => {
     expect(calculator).toEqual({});
   });
+
   // tests planetConversion function
   // 1 mercury age = .24 earth age
   // 1 venus age = .62 earth age
   // 1 mars age = 1.88 earth age
   // 1 jupiter age = 11.86 earth ages
-
-  test("It will convert the input number from earth time to another planet's time", () => {
+  test("It will convert the input number from earth time to another planet's time (input planet can be non-case sensitive)", () => {
     expect(calculator.timeConverter(26, "Mercury")).toEqual(108.33333333333334);
+    expect(calculator.timeConverter(26, "mercury")).toEqual(108.33333333333334);
+    expect(calculator.timeConverter(26, "mERcUrY")).toEqual(108.33333333333334);
     expect(calculator.timeConverter(26, "Venus")).toEqual(41.935483870967744);
+    expect(calculator.timeConverter(26, "venu")).toEqual(41.935483870967744);
     expect(calculator.timeConverter(26, "Mars")).toEqual(13.8297872340425532);
+    expect(calculator.timeConverter(26, "MARS")).toEqual(13.8297872340425532);
+    expect(calculator.timeConverter(26, "mars")).toEqual(13.8297872340425532);
     expect(calculator.timeConverter(26, "Jupiter")).toEqual(2.192242833052276559865);
+    expect(calculator.timeConverter(26, "jUpiteR")).toEqual(2.192242833052276559865);
+    expect(calculator.timeConverter(26, "juPItEr")).toEqual(2.192242833052276559865);
   });
   // tests planetAge function
   // assumes that a person's inputted age is always a positive integer
