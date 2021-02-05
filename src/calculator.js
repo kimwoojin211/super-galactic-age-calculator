@@ -1,7 +1,7 @@
 export default class Calculator{
   constructor(){}
 
-  realAge(earthAge,location)
+  realAge(earthAge,location) // assumes all ages are integers that round down after conversion
   {
     switch(location){
       case("Mercury"):

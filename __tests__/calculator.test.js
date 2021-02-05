@@ -5,10 +5,16 @@ describe('Calculator', () => {
   beforeEach(() => {
     calculator = new Calculator();
   });
-test("It will create a new Super Galactic Age Calculator object", () => {
+  test("It will create a new Super Galactic Age Calculator object", () => {
     expect(calculator).toEqual({});
   });
-test("It will calculate a person's age on Mercury", () => {
+  // assumes all ages are integers that round down after conversion
+  // 1 mercury age = .24 earth age
+  test("It will calculate a person's age on Mercury", () => {
     expect(calculator.realAge(26,"Mercury")).toEqual(108);
+  });
+    // 1 venus age = .62 earth age
+  test("It will calculate a person's age on Venus", () => {
+    expect(calculator.realAge(26, "Venus")).toEqual(41);
   });
 });
