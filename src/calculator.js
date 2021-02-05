@@ -6,6 +6,8 @@ export default class Calculator{
     switch(location){
       case("Mercury"):
         return Math.floor(earthAge / .24);
+      case ("Venus"):
+        return Math.floor(earthAge / .62);
       default:
         break;
     }
