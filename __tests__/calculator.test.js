@@ -1,15 +1,3 @@
-/*woojin notes:
-.................................
-i just read the sentence that says
-"we'll only want ONE expectation per test."
-a;woijga;owirgja;owirgja;eoigha;oeirhoa;ierhghae
-why.
-
-also, i realized that if I make location input through buttons, I don't need to worry about capitalization.
-
-sigh.
-*/
-
 import Calculator from './../src/calculator.js';
 describe('Calculator', () => {
   let calculator;
@@ -21,10 +9,6 @@ describe('Calculator', () => {
   });
 
   // tests planetConversion function
-  // 1 mercury age = .24 earth age
-  // 1 venus age = .62 earth age
-  // 1 mars age = 1.88 earth age
-  // 1 jupiter age = 11.86 earth ages
   test("It will convert the input number from earth years to Mercury years.", () => {
     expect(calculator.timeConverter(26, "Mercury")).toEqual(108.33333333333334);
   });

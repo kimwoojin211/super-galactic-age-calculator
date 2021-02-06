@@ -8,17 +8,24 @@
 
 <body>
   <div class="container">
-    <form>
-      <label>Enter your earth age:</label>
-      <input type="number" id="userAge" min="0" placeholder="Positive Integers Only">
-    </form>
-    <div id="button-container">
-      <button id="Mercury">Mercury</button>
-      <button id="Venus">Venus</button>
-      <button id="Mars">Mars</button>
-      <button id="Jupiter">Jupiter</button>
+    <div class="inp">
+      <form>
+        <label>Enter your earth age (years):</label>
+        <input type="text" id="userAge" placeholder="Positive Integers Only">
+      </form>
+      <div id="button-container">
+        <button id="Mercury">Mercury</button>
+        <button id="Venus">Venus</button>
+        <button id="Mars">Mars</button>
+        <button id="Jupiter">Jupiter</button>
+      </div>
     </div>
-    <div id="result"></div>
+  </div>
+  <div class="container">
+    <div class="result">
+      <p>On <span id="planet"></span>, you are <span id="planetAge"></span> old.</p>
+      <p><span id="lifeExp"></span></p>
+    </div>
   </div>
 </body>
 
