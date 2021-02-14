@@ -1,11 +1,11 @@
-/*woojin notes: 
-
-*/
 export default class Calculator {
-  constructor() { }
+  constructor(location) { 
+    
+    this.location = location;
+  }
 
-  timeConverter(earthTime, location) {
-    switch (location) {
+  timeConverter(earthTime) {
+    switch (this.location) {
       case ("Mercury"):
         return earthTime / .24;
       case ("Venus"):
@@ -19,14 +19,14 @@ export default class Calculator {
     }
   }
   // assumes earthAge and returned value are always positive integers
-  planetAge(earthAge, location) {
-    return Math.floor(this.timeConverter(earthAge, location));
+  planetAge(earthAge) {
+    return Math.floor(this.timeConverter(earthAge));
   }
 
   //assumes earthAge is always a positive integer
-  lifeExpectancy(earthAge, location) {
+  lifeExpectancy(earthAge) {
     const averageExpectancy = 70;
-    const convertedExpectancy = this.timeConverter(averageExpectancy - earthAge, location);
+    const convertedExpectancy = this.timeConverter(averageExpectancy - earthAge);
     return convertedExpectancy > 0 ? Math.floor(convertedExpectancy) : Math.ceil(convertedExpectancy);
   }
 }

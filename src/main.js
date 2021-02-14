@@ -4,15 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import Calculator from './calculator';
 
-let calculator = new Calculator();
-
 function attachButtonListener() {
   $("#button-container").on("click", "button", function () {
+    let calculator = new Calculator(this.id);
     const input = parseInt($("#userAge").val());
-    console.log(input);
     if (Number.isInteger(input) && input > 0) {
-      let lifeExp = calculator.lifeExpectancy(input, this.id);
-      const planetAge = calculator.planetAge(input, this.id);
+      let lifeExp = calculator.lifeExpectancy(input);
+      const planetAge = calculator.planetAge(input);
       $(".result").show();
       $("#planet").text(this.id);
       $("#planetAge").text(planetAge + (planetAge > 1 ? " years" : " year"));
@@ -24,18 +22,15 @@ function attachButtonListener() {
       }
       else
       {
-        lifeExp = -lifeExp
+        lifeExp = -lifeExp;
         $("#lifeExp").text(`Congratulations! You have lived ${lifeExp} years more than we expected.`);
       }
     }
   });
 }
 
-$(function () {
 
-  $("form").on("submit", function (event) {
-    event.preventDefault();
-  });
-  attachButtonListener();
-
+$("form").on("submit", function (event) {
+  event.preventDefault();
 });
+attachButtonListener();
