@@ -1,22 +1,18 @@
 export default class Calculator {
-  constructor(location) { 
-    
+  constructor(location) {
+
     this.location = location;
+
+    this.conversion_rates = {
+      "Mercury": .24,
+      "Venus": .62,
+      "Mars": 1.88,
+      "Jupiter": 11.86
+    }
   }
 
   timeConverter(earthTime) {
-    switch (this.location) {
-      case ("Mercury"):
-        return earthTime / .24;
-      case ("Venus"):
-        return earthTime / .62;
-      case ("Mars"):
-        return earthTime / 1.88;
-      case ("Jupiter"):
-        return earthTime / 11.86;
-      default:
-        break;
-    }
+    return earthTime / (this.conversion_rates[this.location]);
   }
   // assumes earthAge and returned value are always positive integers
   planetAge(earthAge) {
